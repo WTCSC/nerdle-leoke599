@@ -8,52 +8,60 @@
    - Code is automatically tested *every time* you push changes to GitHub.
 -->
 
-# Nerdle
+# Nerdle 🧮
 
-Nerdle is a small Python implementation of a Wordle-like game where the
-player must guess an 8-character mathematical equation (for example `12+3=15`).
-This repository contains a playable CLI, an equation generator, and unit tests
-used for automated grading.
+A fun mathematical twist on Wordle! Instead of guessing words, you need to figure out an 8-character equation like `12+34=46` or `3*34=102`. Put your math skills to the test in this engaging puzzle game.
 
 ![Nerdle screenshot](images/nerdle.png)
 
-## Key features
+## Game Features
 
-- CLI play mode (`nerdle.py`)
-- Equation generation utilities (`equation_generator.py`)
-- Game validation and feedback (`game_engine.py`)
+- **Mathematical Wordle**: Guess equations instead of words
+- **8-character format**: All equations will have exactly 8 characters without spaces
+- **Smart feedback**: Get hints about correct numbers and positions
+- **6 attempts**: You have 6 guesses to solve each puzzle
+- **Valid equations only**: Only mathematically correct equations are accepted
 
-## Requirements
+## Getting Started
 
-- Python 3.8+ (3.12 tested in CI)
-- No external packages required — uses only the Python standard library
+### Requirements
+- Python 3.8 or higher
+- No external packages needed!
 
-## Installation
+### Quick Start
 
-1. Clone the repository and change into the project directory:
-
+1. **Download the game:**
 ```bash
 git clone <repo-url>
 cd nerdle-leoke599
 ```
 
-2. (Optional) Create a virtual environment:
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-3. Run the game:
-
+2. **Run the game:**
 ```bash
 python3 nerdle.py
 ```
 
-On systems where `python` points to Python 3 you can use `python nerdle.py`.
+That's it! Start guessing equations and have fun! 🎯
 
-## How to play (CLI)
+## How to Play
 
-- The program will pick a random valid 8-character equation.
-- Enter guesses in the terminal in the same 8-character format.
-- The game will provide feedback (correct/incorrect positions or characters).
+🎯 **Objective**: Guess the hidden 8-character mathematical equation
+
+### Game Rules
+- You have **6 attempts** to guess the correct equation
+- Each equation is exactly **8 characters** long (like `12+34=46` dont include spaces)
+- Only valid mathematical equations are accepted
+- Only one operator for every equation (`6*5-2=28` will not work)
+- After each guess, you'll get feedback on your numbers and their positions
+
+### Example Equations
+- `12+34=46` (addition)
+- `3*34=102` (multiplication)
+- `252/36=7` (division)
+- `56-23=33` (subtraction)
+
+### Feedback System
+Just like Wordle, you'll get hints after each guess:
+- **Green**: Right number in the right position
+- **Yellow**: Right number but wrong position  
+- **White**: Number not in the equation
