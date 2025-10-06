@@ -10,6 +10,8 @@ For example: 12+34=46 or 8*7=56
 # TODO: Import the appropriate modules #
 ########################################
 
+import random
+
 ###########################################
 # TODO: Implement the following functions #
 ###########################################
@@ -25,6 +27,18 @@ def generate_numbers_for_addition():
     Example: (12, 34, 46) creates "12+34=46"
     """
 
+    # Loop to get valid numbers that fit the criteria
+    while True:
+
+        # Generate two random two-digit numbers and make sure their sum is also two-digit
+        num1 = random.randint(10, 89) 
+        num2 = random.randint(10, 89)
+        result = num1 + num2
+        if 10 <= result <= 99:
+            return (num1, num2, result)
+        else:
+            continue
+
 def generate_numbers_for_subtraction():
     """
     Generate two numbers that when subtracted create an 8-character equation.
@@ -35,6 +49,19 @@ def generate_numbers_for_subtraction():
 
     Example: (56, 23, 33) creates "56-23=33"
     """
+
+    # Loop to get valid numbers that fit the criteria
+    while True:
+
+        # Generate two random two-digit numbers and ensure the result is positive and two-digit
+        num1 = random.randint(20, 99)
+        num2 = random.randint(10, num1 - 10)
+        result = num1 - num2
+        if 10 < result < 100:
+            return (num1, num2, result)
+        else:
+            continue
+
 
 def generate_numbers_for_multiplication():
     """
@@ -48,6 +75,18 @@ def generate_numbers_for_multiplication():
     Example: (3, 34, 102) creates "3*34=102" (8 characters)
     """
 
+    # Loop to get valid numbers that fit the criteria
+    while True:
+
+        # Generate a single-digit number and a two-digit number and ensure the result is three-digit
+        num1 = random.randint(2, 9)
+        num2 = random.randint(10, 99)
+        result = num1 * num2
+        if 100 < result < 1000:
+            return (num1, num2, result)
+        else:
+            continue
+
 def generate_numbers_for_division():
     """
     Generate two numbers that when divided create an 8-character equation.
@@ -59,6 +98,23 @@ def generate_numbers_for_division():
 
     Example: (252, 36, 7) creates "252/36=7"
     """
+
+    # Loop to get valid numbers that fit the criteria
+    while True:
+
+        # Generate a three-digit number and a two-digit number and ensure exact division
+        num1 = random.randint(100, 999)
+        num2 = random.randint(10, 99)
+        if num1 % num2 == 0:
+
+            # Ensure the result is a single-digit number
+            result = num1 // num2
+            if 1 <= result <= 9:
+                return (num1, num2, result)
+            else:
+                continue
+        else:
+            continue
     
 ################################################################################
 #  DO NOT EDIT BELOW THIS LINE, THESE FUNCTIONS ARE ALREADY COMPLETED FOR YOU  #
