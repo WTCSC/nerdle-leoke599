@@ -1,5 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Tm7PdKHd)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=20879423)
 <!-- 
    Assignment Notes:
    - To run the game, execute `python3 nerdle.py` in the terminal.
@@ -11,3 +9,51 @@
 -->
 
 # Nerdle
+
+Nerdle is a small Python implementation of a Wordle-like game where the
+player must guess an 8-character mathematical equation (for example `12+3=15`).
+This repository contains a playable CLI, an equation generator, and unit tests
+used for automated grading.
+
+![Nerdle screenshot](images/nerdle.png)
+
+## Key features
+
+- CLI play mode (`nerdle.py`)
+- Equation generation utilities (`equation_generator.py`)
+- Game validation and feedback (`game_engine.py`)
+
+## Requirements
+
+- Python 3.8+ (3.12 tested in CI)
+- No external packages required — uses only the Python standard library
+
+## Installation
+
+1. Clone the repository and change into the project directory:
+
+```bash
+git clone <repo-url>
+cd nerdle-leoke599
+```
+
+2. (Optional) Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Run the game:
+
+```bash
+python3 nerdle.py
+```
+
+On systems where `python` points to Python 3 you can use `python nerdle.py`.
+
+## How to play (CLI)
+
+- The program will pick a random valid 8-character equation.
+- Enter guesses in the terminal in the same 8-character format.
+- The game will provide feedback (correct/incorrect positions or characters).
